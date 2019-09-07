@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+import sys
+import os
 
+sys.path.append(os.path.join(sys.path[0], '../'))
+os.path.join(sys.path[0], '../')
 
 import atexit
 import datetime
@@ -14,13 +18,14 @@ import re
 import signal
 import time
 
+import instabot_py
+
 import instaloader
 import requests
 from config42 import ConfigManager
 
-import instabot_py
-from instabot_py.default_config import DEFAULT_CONFIG
-from instabot_py.persistence.manager import PersistenceManager
+from default_config import DEFAULT_CONFIG
+from persistence.manager import PersistenceManager
 
 
 class CredsMissing(Exception):

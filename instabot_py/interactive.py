@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+import sys
+import os
+
+sys.path.append(os.path.join(sys.path[0], '../'))
+os.path.join(sys.path[0], '../')
 
 import configparser
 import json

@@ -1,6 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+import sys
+import os
 
+sys.path.append(os.path.join(sys.path[0], '../'))
+os.path.join(sys.path[0], '../')
+
+from distutils.version import LooseVersion, StrictVersion
 import logging.config
 from collections import OrderedDict
 
@@ -288,7 +294,7 @@ def main():
 
     if not config.get('ignore_updates'):
         last_version = get_last_version()
-        if last_version and last_version != instabot_py.__version__:
+        if last_version and LooseVersion(last_version) > LooseVersion(instabot_py.__version__):
             print("Newer version available: {}, The current version: {}".format(last_version, instabot_py.__version__))
             print("To update, please type \n python3 -m pip install instabot-py --upgrade --no-cache-dir ")
             print("")
