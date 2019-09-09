@@ -1084,6 +1084,11 @@ class InstaBot:
 
         if resp.status_code == 200:
             raw_data = re.search("window._sharedData = (.*?);", resp.text, re.DOTALL).group(1)
+
+            if not '"entry_data":{"PostPage"' in raw_data:
+                self.logger.critical("Invalid data from media.")
+                return False
+
             all_data = json.loads(raw_data)["entry_data"]["PostPage"][0]
 
             if all_data["graphql"]["shortcode_media"]["owner"]["id"] == self.user_id:

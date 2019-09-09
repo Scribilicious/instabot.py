@@ -1,4 +1,13 @@
-#### This project will be frozen until we will find good developers team. We stopped project development. If you want to be in developer team - email me. Use last version on your own risk. 
+# Scribilicious his Version :)
+
+## Install
+
+I needed to install / update folowing packages on mac to make it work:
+
+- python3 -m pip install git+https://github.com/yurilaaziz/config42
+
+
+#### This project will be frozen until we will find good developers team. We stopped project development. If you want to be in developer team - email me. Use last version on your own risk.
 
 
 # Instabot.py 🤖 🌟
@@ -132,7 +141,7 @@ export INSTABOT_CONFIG_FILE=instabot2.config.yml
 login : "username"
 password : "password"
 debug: 1
-#Send INFO notification to Telegram channel 
+#Send INFO notification to Telegram channel
 logging.handlers.telegram:
   level: INFO
   class: telegram_handler.TelegramHandler
